@@ -14,14 +14,15 @@ string rtrim(const string &);
 
 string hackerrankInString(string s)
 {
-    std::deque<char> dq = {'h', 'a', 'c', 'k', 'e', 'r', 'r', 'a', 'n', 'k'};
-    
-    for (const auto & c : s)
+    constexpr std::string_view target = "hackerrank";
+    int targetIndex = 0;
+
+    for (char c : s)
     {
-        if (c == dq[0])
+        if (targetIndex < target.length() && c == target[targetIndex])
         {
-            dq.pop_front();
-            if (dq.empty())
+            targetIndex++;
+            if (targetIndex == target.length())
             {
                 return "YES";
             }
@@ -30,3 +31,4 @@ string hackerrankInString(string s)
 
     return "NO";
 }
+
