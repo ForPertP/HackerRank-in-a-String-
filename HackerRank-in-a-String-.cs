@@ -21,8 +21,29 @@ class Result
      * The function is expected to return a STRING.
      * The function accepts STRING s as parameter.
      */
-}
 
+    public static string hackerrankInString(string s)
+    {
+        ReadOnlySpan<char> target = "hackerrank";
+        int targetIndex = 0;
+
+        foreach (char c in s)
+        {
+            if (targetIndex < target.Length && c == target[targetIndex])
+            {
+                targetIndex++;
+                if (targetIndex == target.Length)
+                {
+                    return "YES";
+                }
+            }
+        }
+
+        return "NO";
+    }
+
+
+}
 
 class Solution
 {
