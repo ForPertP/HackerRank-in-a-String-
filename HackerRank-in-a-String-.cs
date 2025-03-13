@@ -14,7 +14,6 @@ using System;
 
 class Result
 {
-
     /*
      * Complete the 'hackerrankInString' function below.
      *
@@ -61,8 +60,8 @@ class Result
 
         return "NO";
     }
-
 }
+
 
 class Solution
 {
