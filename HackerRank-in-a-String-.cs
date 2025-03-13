@@ -43,6 +43,25 @@ class Result
     }
 
 
+    public static string hackerrankInString2(string s)
+    {
+        Queue<char> queue = new Queue<char>("hackerrank");
+
+        foreach (char c in s)
+        {
+            if (queue.Count > 0 && c == queue.Peek()) 
+            {
+                queue.Dequeue();
+                if (queue.Count == 0)
+                {
+                    return "YES";
+                }
+            }
+        }
+
+        return "NO";
+    }
+
 }
 
 class Solution
