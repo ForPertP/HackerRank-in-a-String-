@@ -19,6 +19,21 @@ class Result {
      * The function accepts STRING s as parameter.
      */
 
+     public static String hackerrankInString(String s) {
+        String target = "hackerrank";
+        int targetIndex = 0;
+
+        for (char c : s.toCharArray()) {
+            if (targetIndex < target.length() && c == target.charAt(targetIndex)) {
+                targetIndex++;
+                if (targetIndex == target.length()) {
+                    return "YES";
+                }
+            }
+        }
+        return "NO";
+    }
+    
 }
 
 
