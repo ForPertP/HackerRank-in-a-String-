@@ -19,7 +19,7 @@ class Result {
      * The function accepts STRING s as parameter.
      */
 
-     public static String hackerrankInString(String s) {
+    public static String hackerrankInString(String s) {
         String target = "hackerrank";
         int targetIndex = 0;
 
@@ -33,9 +33,25 @@ class Result {
         }
         return "NO";
     }
-    
-}
 
+
+    public static String hackerrankInString2(String s) {
+        Queue<Character> queue = new LinkedList<>();
+        for (char c : "hackerrank".toCharArray()) {
+            queue.add(c);
+        }
+
+        for (char c : s.toCharArray()) {
+            if (!queue.isEmpty() && c == queue.peek()) {
+                queue.poll();
+                if (queue.isEmpty()) {
+                    return "YES";
+                }
+            }
+        }
+        return "NO";
+    }
+}
 
 
 public class Solution {
